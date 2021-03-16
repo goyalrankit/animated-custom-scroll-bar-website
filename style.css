@@ -34,21 +34,28 @@
     color: #000;
 }
 
-::-webkit-scrollbar
-{
-    display: none;
-}
-
 #progressBar
 {
     position: fixed;
     top: 0;
     right: 0;
-    height: 50%;
+    height: 1%;
     width: 10px;
     border-radius: 5px;
     background: linear-gradient(to top,#008aff,#00ffe7);
     animation: animateScroll 5s linear infinite;
+}
+
+#progressBar ::before,
+#progressBar ::after
+{
+    content: "";
+    top: 0; 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to top,#008aff,#00ffe7);
 }
 
 #scrollBar
@@ -71,4 +78,10 @@
     {
         filter: hue-rotate(360deg);
     }
+}
+
+::-webkit-scrollbar
+{
+    width: 5px;
+    top: 0;
 }
